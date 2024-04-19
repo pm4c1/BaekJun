@@ -1,0 +1,21 @@
+package greedy;
+
+import java.util.Scanner;
+
+public class Coin {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int[] coin = {500,100,50,10};
+		
+		int result = 0;
+		
+		for(int c : coin) {
+			result += N/c;
+			N -= (N/c)*c;
+		}
+		System.out.println(result);
+	}
+}
