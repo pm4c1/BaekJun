@@ -1,0 +1,37 @@
+package greedy;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Budget {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int[] d = new int[N];
+		
+		for(int i = 0; i < N; i++) {
+			d[i] = sc.nextInt();
+		}
+		
+		int budget = sc.nextInt();
+		
+		System.out.println(solution(d, budget));
+		
+	}
+
+	public static int solution(int[] d , int budget) {
+		int temp = 0;
+		Arrays.sort(d);
+		
+		for(int 어마운트 : d) {
+			if(budget < 0) {
+				break;
+			}
+			budget -= 어마운트;
+				temp++;
+		}
+		return temp >= 0 ? temp : temp - 1;
+	}
+}
